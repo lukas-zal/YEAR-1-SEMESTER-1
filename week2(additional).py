@@ -2,8 +2,12 @@ def additional():
     a = int(input("Enter start point (a): "))
     b = int(input("Enter end point (b): "))
     c = int(input("Enter step (c): "))
-    if a > b and c > 0:
-        c = -c  
-    for num in range(a, b + 1 if c > 0 else b - 1, c):
-        print(num, end=", ")
+    if c == 0:
+        print("Step (c) cannot be 0.")
+        return
+    for num in range(a, b, c):
+        print(num)
+    num = num + c    
+    if num == b:
+        print(num)       
 additional()
